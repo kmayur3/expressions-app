@@ -1,0 +1,13 @@
+<div>
+	<div droppable (onDrop)="onOperatorDrop($event)" id="ExpressionArea">
+    	<h2>Drop Here</h2>
+    	<div  *ngIf="selectedOperator">  
+    		<app-display-expression [selectedOperator]= selectedOperator [paramArray] = paramArray></app-display-expression>						
+    	</div>
+	</div>
+
+	<div id="OperatorArea">
+    	<h2>Drag one of these operators</h2>
+    	<div id="Icons" *ngFor="let operator of operators" draggable [dragData] = "operator">{{operator.name}}</div>
+    </div>
+</div>
